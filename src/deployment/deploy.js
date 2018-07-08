@@ -8,6 +8,7 @@ class Deploy {
         this.username = username;
         this.app = app;
         this.appPath = '';
+        this.currentVersion = 0;
         this.testSuccess = false;
     }
 
@@ -29,7 +30,7 @@ class Deploy {
 
             stream.on('end', () => {
                 console.log('done');
-                fulfill(this.appPath);
+                fulfill({appPath: this.appPath, currentVersion: this.currentVersion});
             });
         });
     }
@@ -94,7 +95,9 @@ class Deploy {
                 lastVersion = intdir;
         });
 
-        return `${target}/${++lastVersion}`;
+        this.currentVersion = lastVersion + 1;
+
+        return `${target}/${this.currentVersion}`;
     }
 
 }
