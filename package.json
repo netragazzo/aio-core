@@ -1,0 +1,29 @@
+{
+  "name": "aio-core",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./src/**/*.test.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/netragazzo/aio-core.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/netragazzo/aio-core/issues"
+  },
+  "homepage": "https://github.com/netragazzo/aio-core#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mocha": "^5.2.0",
+    "tar-fs": "^1.16.3",
+    "vm2": "^3.6.2"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2"
+  }
+}
