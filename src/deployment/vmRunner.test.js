@@ -7,6 +7,7 @@ const Timer = require('../instrumentation/timer');
 
 describe('VmRunner', function (done) {
     let appPath = path.join(process.env.PWD, '/test/sample_author/sample_app/1');
+    console.log(`Path: ${appPath}:`)
 
     it('should execute the sample_author/sample_app add function in the VM', function(done) {
         let vmRunner = new VmRunner(appPath, new Timer());
