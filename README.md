@@ -1,3 +1,3 @@
 # aio-core
 
-[![Coverage Status](https://coveralls.io/repos/github/netragazzo/aio-cli/badge.svg?branch=master)](https://coveralls.io/github/netragazzo/aio-cli?branch=master)
+[![Build Status](https://travis-ci.org/netragazzo/aio-core.svg?branch=master)](https://travis-ci.org/netragazzo/aio-core)
