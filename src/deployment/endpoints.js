@@ -60,6 +60,7 @@ class Endpoints {
                 this.router[lowerMethod](endpointPath, (req, res) => {
                     let timer = new Timer();
                     let funcParams = this._getValidParameters(spec.parameters, req);
+                    time.parametersValidated
                     this._vmRun(appPath, method, funcParams, res, timer);
                 });
 
