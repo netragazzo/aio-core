@@ -61,3 +61,6 @@ typings/
 .next
 
 .idea
+
+# leveldb data files
+db/graph
