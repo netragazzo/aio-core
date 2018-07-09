@@ -28,20 +28,21 @@ class VmRunner {
                 return m(params); 
             }`);
 
-            let vmMethod = this.vm.run(vmScript, basePath);
+            try {
+                let vmMethod = this.vm.run(vmScript, basePath);
 
-            this.timer.vmStarted();
+                this.timer.vmStarted();
 
-            let result = vmMethod(method, params);
-            Promise.resolve(result)
-                .then(value => {
-                    this.timer.functionReturned();
-                    fulfill(value);
-                })
-                .catch(e => {
-                    this.timer.functionReturned();
-                    reject(e);
-                });
+                let result = vmMethod(method, params);
+                Promise.resolve(result)
+                    .then(value => {
+                        this.timer.functionReturned();
+                        fulfill(value);
+                    });
+            }
+            catch (e) {
+                console.error('Error running script in vm', e);
+            }
         });
     }
 }
